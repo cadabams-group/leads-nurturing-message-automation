@@ -14,7 +14,7 @@ Note: This workflow demonstrates the message automation on Lead stage for hospit
 videoRecordID ( fetch a video related to the lead’s disorder )
 
 `Step 1:`
-**Send a message using http request (uses graphQL in the request body)**
+**Send first message using http request (uses graphQL in the request body)**
 ```
 method: "post"
 url: https://api.rasayel.io/api/graphql
