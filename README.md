@@ -189,23 +189,40 @@ headers: {
 **body:**
 ```json
 {
-"query": "mutation ($input: MessageProactiveTemplateCreateInput!) {\ntemplateProactiveMessageCreate(input: $input) {\nmessage {\ncreatedAt\ncreatedAtCursor\ndeletedAt\ndeliveredAt\ndirection\nfailedAt\nforwarded\nid\nidCursor\nidempotencyKey\nmessageCategory\nmessageSubtype\nmessageType\nmodifiedAt\nreactions\nreadAt\nreceivedAt\nrepliedTo\nsentAt\nupdatedAt\nuuid\n}\n}\n}",
-"variables": {
-  "input": {
-    "channelId": 2054,
-    "receiver": "﻿phone﻿",
-    "messageTemplateId": 29120,
-    "components": [
-      {
-        "type": "BODY",
-        "parameters": [
-          {
-            "type": "TEXT",
-            "text": "﻿firstName﻿"
-          }
-        ]
-      }
-    ]
+  "query": "mutation ($input: MessageProactiveTemplateCreateInput!) {\ntemplateProactiveMessageCreate(input: $input) {\nmessage {\ncreatedAt\ncreatedAtCursor\ndeletedAt\ndeliveredAt\ndirection\nfailedAt\nforwarded\nid\nidCursor\nidempotencyKey\nmessageCategory\nmessageSubtype\nmessageType\nmodifiedAt\nreactions\nreadAt\nreceivedAt\nrepliedTo\nsentAt\nupdatedAt\nuuid\n}\n}\n}",
+  "variables": {
+    "input": {
+      "channelId": 2054,
+      "receiver": "﻿phone﻿",
+      "messageTemplateId": 29128,
+      "components": [
+        {
+          "type": "BODY",
+          "parameters": [
+            {
+              "type": "TEXT",
+              "text": "﻿firstName﻿"
+            },
+            {
+              "type": "TEXT",
+              "text": "*﻿blogTitle6﻿*"
+            },
+            {
+              "type": "TEXT",
+              "text": "﻿blogLink6﻿"
+            },
+            {
+              "type": "TEXT",
+              "text": "*﻿videoTitle6﻿*"
+            },
+            {
+              "type": "TEXT",
+              "text": "﻿videoLink6﻿"
+            }
+          ]
+        }
+      ]
+    }
   }
 }
 ```
