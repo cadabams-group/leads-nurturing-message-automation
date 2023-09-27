@@ -137,9 +137,9 @@ fields to fetch in the response:
 `step 3:` **Check the leadStage of the lead (condition check)**
 ```
 if(leadStage === "Lead"){
-  // continue with the flow ✅
+  // continue with the flow
 } else {
-  // end of flow ❌
+  // end of flow
 }
 ```
 
@@ -228,3 +228,35 @@ headers: {
 ```
 
 `step 7:` **Success! End of Module 🎉**
+
+
+# Airtable - automation script example
+```javascript
+let config = input.config()
+
+let response = await fetch('https://flows.messagebird.com/flows/6d30b5cc-c23e-468b-9986-9877001180d3/invoke', {
+    method: 'POST',
+    body: JSON.stringify({
+        "recordID": config.recordID,
+        "firstName": config.firstName,
+        "phone": config.phone,
+        "disorder": config.disorder,
+        "service": config.service,
+        "blogRecordID": config.blogRecordID,
+        "videoRecordID": config.videoRecordID
+    }),
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+console.log(response);
+```
+| Param name | Param description (airtable) | Param description (CRM) |
+| :--------- | :--------------------------- | :---------------------- |
+| `recordID` | record id of the entry in the airtable base | leadId or Id or respective field in the CRM database |
+| `firstName` | lead's first name | lead's first name |
+| `phone` | lead's phone number | lead's phone number |
+| `disorder` | "mappedDisorder" field on airtable | primary tag |
+| `service` | "service" field on airtable | service (consultation, hospital, rehab, emergency. atleast one of the listed service) |
+| `blogRecordID` | "blogRecordID" field on airtable (fetched from blogs table using resource fetcher automation script on airtable) | blog url related to the particular disorder |
+| `videoRecordID` | "videoRecordID" field on airtable (fetched from videos table using resource fetcher automation script on airtable) | blog url related to the particular disorder |
